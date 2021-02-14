@@ -1,27 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <ui-top-app-bar type="1">Vue.js ことはじめ</ui-top-app-bar>
+  <div class="main-container">
+    <UiGallery></UiGallery>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent } from "vue";
+import UiGallery from "./components/UiGallery.vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
+    UiGallery,
+  },
 });
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.mdc-top-app-bar {
+  top: 0;
+}
+.main-container {
+  margin-top: 80px;
 }
 </style>
