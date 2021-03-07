@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloForm @submit="onSubmit" :name="name"></HelloForm>
   </div>
 </template>
 
 <script>
+import { defineComponent } from "vue";
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloForm from "@/components/HelloForm.vue";
 
-export default {
+export default defineComponent({
   name: "Home",
   components: {
-    HelloWorld,
+    HelloForm,
   },
-};
+  computed: {
+    name() {
+      return this.$store.state.helloWorld.name;
+    },
+  },
+  methods: {
+    onSubmit(value) {
+      this.$store.commit("helloWorld/setName", value);
+      this.$router.push("/result");
+    },
+  },
+});
 </script>
+<style>
+.home {
+  margin: 16px;
+}
+</style>
