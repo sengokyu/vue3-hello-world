@@ -1,8 +1,10 @@
 import { createStore } from "vuex";
+import helloWorld from "./modules/hello-world";
 
-export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+const store = createStore({
+  modules: {
+    helloWorld,
+  },
 });
+
+export default store;
