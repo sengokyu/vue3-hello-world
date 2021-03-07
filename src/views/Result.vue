@@ -18,3 +18,9 @@ export default defineComponent({
   },
 });
 </script>
+<style>
+.result {
+  text-align: center;
+  font-size: 3em;
+}
+</style>
